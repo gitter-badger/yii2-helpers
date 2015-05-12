@@ -44,7 +44,7 @@ class BaseIp
     
     public static function IPv6toLong($ip)
     {
-        $ip_n = inet_ntop($ip);
+        $ip_n = inet_pton($ip);
         $bits = 15; // 16 x 8 bit = 128 bit (ipv6)
         $ipbin = '';
         while ($bits >= 0)

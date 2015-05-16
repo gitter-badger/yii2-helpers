@@ -38,7 +38,7 @@ class BaseNumber
                     .substr($charid, 8, 4) . $hyphen
                     .substr($charid, 12, 4) . $hyphen
                     .substr($charid, 16, 4) . $hyphen
-                    .substr($charid, 20, 12) . $hyphen . chr(125);
+                    .substr($charid, 20, 12) . chr(125);
         }
         if ($need_braces === false)
         {

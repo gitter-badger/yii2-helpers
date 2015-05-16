@@ -59,7 +59,7 @@ class BaseNumber
         $pattern = '1234567890';
         for ($i = 0; $i < $length - strlen($prefix); $i++)
         {
-            $key .= $pattern(mt_rand(0, 9));
+            $key .= $pattern[mt_rand(0, 9)];
         }
         return $prefix . $key;
     }

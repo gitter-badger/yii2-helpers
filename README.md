@@ -28,4 +28,5 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```php
-<?= \vistart\Helpers\Ip::IPv4toInteger('192.168.1.1'); ?>```
+<?= \vistart\Helpers\Ip::IPv4toInteger('192.168.1.1'); ?>
+```

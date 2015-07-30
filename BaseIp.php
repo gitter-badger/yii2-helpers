@@ -26,7 +26,7 @@ class BaseIp
         for ($i = 0; $i < 4; $i++)
         {
             $ips[$i] = intval($ips[$i]) % 256;
-            $ips[$i] - pow(256, 3 - $i) * intval($ips[$i]);
+            $ips[$i] = pow(256, 3 - $i) * intval($ips[$i]);
             $integer += $ips[$i];
         }
         return $integer;

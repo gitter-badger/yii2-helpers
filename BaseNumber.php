@@ -19,6 +19,8 @@ namespace vistart\Helpers;
  */
 class BaseNumber 
 {
+    const GUID_REGEX = "/^[a-fA-F0-9]{8}-([a-fA-F0-9]{4}-){3}[a-fA-Z0-9]{12}$/";
+    
     /**
      * Generate the guid with parameters.
      * @param boolean $need_braces Determines whether it needs both sides of braces.
@@ -45,6 +47,22 @@ class BaseNumber
             $uuid = (($need_braces == true) ? $uuid : trim($uuid, '{}'));
         }
         return ($lowercase === true ? strtolower($uuid) : $uuid);
+    }
+    
+    /**
+     * 去掉不匹配 GUID 模式的数组元素。
+     * @param string[] $uuids 原始数组。
+     * @return string[] 去掉不匹配 GUID 模式数组元素的数组。
+     */
+    public static function unsetInvalidUuids($uuids)
+    {
+        foreach ($uuids as $key => $uuid)
+        {
+            if (!preg_match(self::GUID_REGEX, $uuid)){
+                unset($uuids[$key]);
+            }
+        }
+        return $uuids;
     }
     
     /**

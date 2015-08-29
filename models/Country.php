@@ -113,6 +113,6 @@ class Country extends \yii\db\ActiveRecord
      */
     public function getProvinces()
     {
-        return $this->hasMany(Province::className(), ['country' => 'alpha2']);
+        return $this->hasMany(Province::className(), ['country' => 'alpha2'])->inverseOf('country0');
     }
 }

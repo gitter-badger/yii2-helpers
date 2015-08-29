@@ -23,7 +23,7 @@ use vistart\Helpers\Geolocation;
  * 
  * @author vistart <i@vistart.name>
  */
-class Setting extends \yii\db\ActiveRecord
+final class Setting extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc

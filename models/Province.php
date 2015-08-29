@@ -20,7 +20,7 @@ use vistart\Helpers\Geolocation;
  * 
  * @author vistart <i@vistart.name>
  */
-class Province extends \yii\db\ActiveRecord
+final class Province extends \yii\db\ActiveRecord
 {
     public static function asArray($provinces = [])
     {

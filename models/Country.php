@@ -26,7 +26,7 @@ use vistart\Helpers\Geolocation;
  * 
  * @author vistart <i@vistart.name>
  */
-class Country extends \yii\db\ActiveRecord
+final class Country extends \yii\db\ActiveRecord
 {
     public static function asArray($countries = [])
     {

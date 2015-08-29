@@ -15,7 +15,7 @@ namespace vistart\Helpers;
 /**
  * Description of BaseGravatar
  *
- * @author vistart
+ * @author vistart <i@vistart.name>
  */
 class BaseGravatar 
 {

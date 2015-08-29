@@ -13,7 +13,7 @@
 namespace vistart\Helpers;
 
 /**
- * Description of BaseNumber
+ * Generate Randum Number with the specified length, GUID.
  *
  * @author vistart <i@vistart.name>
  */

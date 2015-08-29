@@ -15,7 +15,7 @@ namespace vistart\Helpers;
 /**
  * Description of Geolocation
  *
- * @author vistart
+ * @author vistart <i@vistart.name>
  */
 class Geolocation extends BaseGeolocation
 {

@@ -15,7 +15,7 @@ namespace vistart\Helpers;
 /**
  * Description of Gravatar
  *
- * @author vistart
+ * @author vistart <i@vistart.name>
  */
 class Gravatar extends BaseGravatar {
     //put your code here

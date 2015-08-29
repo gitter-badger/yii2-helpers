@@ -13,12 +13,19 @@
 namespace vistart\Helpers;
 
 /**
- * Description of BaseIp
+ * Converter between the IPv4 or IPv6 and the corresponding integer.
  *
- * @author vistart
+ * @author vistart <i@vistart.name>
  */
 class BaseIp 
 {
+    /**
+     * Convert the IPv4 address to integer.
+     * For example:
+     * the $ip is '127.0.0.1', then will get 2130706433.
+     * @param string $ip the IPv4 address.
+     * @return integer the corresponding integer.
+     */
     public static function IPv4toInteger($ip)
     {
         $ips = explode('.', $ip);
@@ -32,10 +39,25 @@ class BaseIp
         return $integer;
     }
     
+    /**
+     * Convert the IPv4 address to integer.
+     * For example:
+     * the $ip is '127.0.0.1', then will get 2130706433.
+     * @param string $ip the IPv4 address.
+     * @return integer the corresponding integer.
+     */
     public static function ip2long($ip)
     {
         return trim(sprintf("%u", ip2long($ip)));
     }
+    
+    /**
+     * Convert the integer to IPv4 address.
+     * For example:
+     * the $long is 2130706433, then will get '127.0.0.1'.
+     * @param integer $long the integer which stands for the IPv4 address.
+     * @return string the corresponding IPv4 address.
+     */
     
     public static function long2ip($long)
     {

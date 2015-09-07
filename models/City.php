@@ -2,9 +2,6 @@
 
 namespace vistart\Helpers\models;
 
-use Yii;
-use vistart\Helpers\Geolocation;
-
 /**
  * This is the model class for table "city".
  *
@@ -21,7 +18,7 @@ use vistart\Helpers\Geolocation;
  * 
  * @author vistart <i@vistart.name>
  */
-final class City extends \yii\db\ActiveRecord
+final class City extends BaseModel
 {
     public static function asArray($cities = [])
     {
@@ -52,14 +49,6 @@ final class City extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return '{{%city}}';
-    }
-
-    /**
-     * @return \yii\db\Connection the database connection used by this AR class.
-     */
-    public static function getDb()
-    {
-        return (new Geolocation())->getDb();
     }
 
     /**

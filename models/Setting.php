@@ -13,7 +13,6 @@
 namespace vistart\Helpers\models;
 
 use Yii;
-use vistart\Helpers\Geolocation;
 
 /**
  * This is the model class for table "{{%setting}}".
@@ -23,7 +22,7 @@ use vistart\Helpers\Geolocation;
  * 
  * @author vistart <i@vistart.name>
  */
-final class Setting extends \yii\db\ActiveRecord
+final class Setting extends BaseModel
 {
     /**
      * @inheritdoc
@@ -54,13 +53,5 @@ final class Setting extends \yii\db\ActiveRecord
             'key' => Yii::t('app', 'Key'),
             'value' => Yii::t('app', 'Value'),
         ];
-    }
-    
-    /**
-     * @return \yii\db\Connection the database connection used by this AR class.
-     */
-    public static function getDb()
-    {
-        return (new Geolocation())->getDb();
     }
 }

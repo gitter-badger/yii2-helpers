@@ -12,8 +12,6 @@
 
 namespace vistart\Helpers;
 
-use Yii;
-use yii\db\Connection;
 use vistart\Helpers\models\Setting;
 use vistart\Helpers\models\Country;
 use vistart\Helpers\models\Province;
@@ -25,34 +23,7 @@ use vistart\Helpers\models\District;
  * @author vistart <i@vistart.name>
  */
 class BaseGeolocation 
-{
-    /**
-     * 
-     * @var Connection 
-     */
-    protected $db;
-    
-    /**
-     * Construct new database connection.
-     * @param mixed|null $config the database's configuration.
-     */
-    public function __construct($config = null)
-    {
-        if (!$config) {
-            $config = require(__DIR__ . '/config/region.php');
-        }
-        $this->db = new Connection($config);
-    }
-    
-    /**
-     * Get the database connection;
-     * @return Connection the database connection.
-     */
-    public function getDb()
-    {
-        return $this->db;
-    }
-    
+{    
     /**
      * Get the Country instance with specified Alpha2 Code;
      * @param string $alpha2
@@ -121,8 +92,13 @@ class BaseGeolocation
      */
     public static function getSettingValue($key)
     {
-        if (is_string($key)){
-            return Setting::findOne(['key' => $key])['value'];
+        if (!is_string($key)){
+            throw new yii\base\InvalidParamException("The parameter passed to this method is not a string.");
+        }
+        $setting = Setting::findOne(['key' => $key]);
+        if ($setting !== null)
+        {
+            return $setting['value'];
         }
         return null;
     }    

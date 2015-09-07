@@ -2,9 +2,6 @@
 
 namespace vistart\Helpers\models;
 
-use Yii;
-use vistart\Helpers\Geolocation;
-
 /**
  * This is the model class for table "province".
  *
@@ -20,7 +17,7 @@ use vistart\Helpers\Geolocation;
  * 
  * @author vistart <i@vistart.name>
  */
-final class Province extends \yii\db\ActiveRecord
+final class Province extends BaseModel
 {
     public static function asArray($provinces = [])
     {
@@ -51,14 +48,6 @@ final class Province extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return '{{%province}}';
-    }
-
-    /**
-     * @return \yii\db\Connection the database connection used by this AR class.
-     */
-    public static function getDb()
-    {
-        return (new Geolocation())->getDb();
     }
 
     /**

@@ -1,5 +1,7 @@
 Helpers of Yii 2 Extension
 ==========================
+
+[![Join the chat at https://gitter.im/vistart/yii2-helpers](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/vistart/yii2-helpers?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 The helpers for Yii 2 application.
 
 Installation
